@@ -1,0 +1,35 @@
+branches:
+  only:
+  - master
+matrix:
+  include:
+  - os: linux
+    sudo: true
+    name: deploy
+    language: node_js
+    dist: xenial
+    node_js:
+      - 11
+    addons:
+      apt:
+        update: true
+        sources:
+        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        - sourceline: deb https://dl.google.com/linux/deb/ stable main
+          key_url: https://dl.google.com/linux/linux_signing_key.pub
+        packages:
+          - yarn
+          - sshpass
+    cache:
+      npm: false
+install:
+  - yarn install
+script:
+  - ionic build --prod
+after_script:
+  - sh $TRAVIS_BUILD_DIR/.travis/publish.sh
+env:
+  global:
+  - LANG=zh_CN.UTF-8
+  - SSHPASS=$ALIYUN_PASS

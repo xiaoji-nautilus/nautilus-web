@@ -22,10 +22,20 @@
   margin: 0;
 }
 
+#container div.logo {
+  display: inline-block;
+  width: 168px;
+  height: 168px;
+}
+
 #container a {
   text-decoration: none;
 }
 
 ion-content ion-toolbar {
   --background: translucent;
+}
+
+p.copyright-text {
+  font-size: 50%;
 }
