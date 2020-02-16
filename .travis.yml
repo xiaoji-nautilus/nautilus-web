@@ -31,10 +31,7 @@ before_script:
 script:
   - ionic build --prod
 after_script:
-#  - sh $TRAVIS_BUILD_DIR/.travis/publish.sh
-  - cd $TRAVIS_BUILD_DIR/www && tar -czvf /tmp/www.tar.gz *
-  - sshpass -e scp -o stricthostkeychecking=no /tmp/www.tar.gz root@www.guobaa.com:/tmp/
-  - sshpass -e ssh -p22 root@www.guobaa.com tar -xzvf /tmp/www.tar.gz -C /var/www/html/ncs
+  - sh $TRAVIS_BUILD_DIR/.travis/publish.sh
 env:
   global:
   - LANG=zh_CN.UTF-8
