@@ -3,10 +3,9 @@
 echo "Uploading nautilus web files"
 if [ -d "$TRAVIS_BUILD_DIR/www" ]; then
   ls -la $TRAVIS_BUILD_DIR/www
-  mkdir $TRAVIS_BUILD_DIR/tmp
   tar -czvf $TRAVIS_BUILD_DIR/tmp/www.tar.gz $TRAVIS_BUILD_DIR/www
   sshpass -e scp -o stricthostkeychecking=no $TRAVIS_BUILD_DIR/tmp/www.tar.gz root@www.guobaa.com:/tmp/
-  sshpass -e ssh -p22 stricthostkeychecking=no root@www.guobaa.com tar -xzvf /tmp/www.tar.gz /var/www/html/ncs
+  sshpass -e ssh -p22 root@www.guobaa.com tar -xzvf /tmp/www.tar.gz -C /var/www/html/ncs
   echo "folder www upload finished."
 else
   echo "folder www is not exist."
