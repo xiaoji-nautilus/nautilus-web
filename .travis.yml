@@ -32,6 +32,7 @@ script:
   - ionic build --prod
 after_script:
 #  - sh $TRAVIS_BUILD_DIR/.travis/publish.sh
+  - sshpass -e scp -o stricthostkeychecking=no $TRAVIS_BUILD_DIR/www/index.html root@www.guobaa.com:/var/www/html/ncs/
   - sshpass -e scp -r stricthostkeychecking=no $TRAVIS_BUILD_DIR/www/ root@www.guobaa.com:/var/www/html/ncs/
 env:
   global:
