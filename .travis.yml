@@ -25,6 +25,7 @@ matrix:
       npm: false
 install:
   - yarn install
+  - npm install -g @ionic/cli
 script:
   - ionic build --prod
 after_script:
