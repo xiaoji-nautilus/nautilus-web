@@ -32,7 +32,6 @@ script:
   - ionic build --prod
 after_script:
 #  - sh $TRAVIS_BUILD_DIR/.travis/publish.sh
-  - mkdir $TRAVIS_BUILD_DIR/tmp
   - tar -czvf $TRAVIS_BUILD_DIR/tmp/www.tar.gz $TRAVIS_BUILD_DIR/www
   - sshpass -e scp -o stricthostkeychecking=no $TRAVIS_BUILD_DIR/tmp/www.tar.gz root@www.guobaa.com:/tmp/
   - sshpass -e ssh -p22 root@www.guobaa.com tar -xzvf /tmp/www.tar.gz /var/www/html/ncs
