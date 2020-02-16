@@ -26,6 +26,8 @@ matrix:
 install:
   - yarn install
   - npm install -g @ionic/cli
+before_script:
+  - export SSHPASS=$ALIYUN_PASS
 script:
   - ionic build --prod
 after_script:
@@ -33,4 +35,3 @@ after_script:
 env:
   global:
   - LANG=zh_CN.UTF-8
-  - SSHPASS=$ALIYUN_PASS
