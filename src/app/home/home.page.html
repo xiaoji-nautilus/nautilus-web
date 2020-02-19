@@ -1,54 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      软件自动化服务
+      Nautilus CS
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="logo-github-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">软件自动化服务</ion-title>
+      <ion-title size="large">Nautilus CS</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>持续集成服务</ion-card-subtitle>
-        <ion-card-title>定制Travis CI自动测试/打包/发布脚本服务</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        手机app项目(iOS/Android)自动编译，自动测试，自动打包apk/ipa
-        并自动上传AppStore，fir.im或者蒲公英等应用商店/测试包发布平台
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>Dockerfile服务</ion-card-subtitle>
-        <ion-card-title>定制Dockerfile脚本服务</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        通过DockerHub，软件代码提交后，自动编译，并打包成docker镜像
-        用于测试或者发布
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>持续开发服务</ion-card-subtitle>
-        <ion-card-title>定制多级触发Webhook个性化事件服务</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        对GitHub中托管的代码库代码提交事件，定制特定文件修改，特定文件格式检查存在问题等
-        自定义事件触发Webhook事件，用于启动针对各类事件不同后续处理。
-      </ion-card-content>
-    </ion-card>
+    <h3>鹦鹉螺 持续为开发者服务</h3>
+    <p>Nautilus Continuous Service</p>
+    <div class="logo">
+      <ion-img src="assets/icon/favicon.png" class="logo"></ion-img>
+    </div>
+    <p>支持GitHub代码库</p>
+    <p>支持自定义多层次树型事件</p>
+    <p>支持自定义数据流</p>
+    <p>支持自定义计算/数据转换</p>
+    <br>
+    <ion-button href="https://github.com/apps/nautilus-cs" size="large">开始使用</ion-button>
   </div>
 </ion-content>
 
